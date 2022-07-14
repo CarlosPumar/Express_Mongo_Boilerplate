@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo:4.2.8
+
+  back:
+    depends_on:
+      - mongo
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3001:$PORT_DEV
+    environment:
+      - PORT=$PORT_DEV
+      - MONGODB_URI=$MONGODB_URI_DEV
+      - SECRET=$SECRET_DEV
+    volumes:
+      - ./:/app

@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo:4.2.8
+    volumes:
+      - 'mongo:/data/db'
+
+  back:
+    depends_on:
+      - mongo
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - 3000:$PORT
+    environment:
+      - PORT=$PORT
+      - MONGODB_URI=$MONGODB_URI
+      - SECRET=$SECRET
+volumes:
+  mongo:
