@@ -1,33 +1,37 @@
-# BANK APP
+# EXPRESS MONGO BOILEPLATE
 
-- Create a route to create user:
+This boilerplate provides a proficient node with express and mongo structure.
 
-  - User will provide there first name, last name, age and bank balance.
-  - You will create user in database will this information and create a 10 digit
-    random account number.
+- Linter (airbnb rules) configured with prettier and husky
+- Dockerized with development and production stages
+- Jest for testing
+- folder structure:
+  - controllers: Router logic
+  - models: Models
+  - tests: Jest tests
+  - utils: Others functionalities
 
-- Users should only be able to make transactions or add connections only after
-  login.
-- Users should be able to send and approve connection requests.
-- Except the create user and login route, all other routes should use authentication,
-  use can use bearer tokens which are at most valid for 15 mins.
-- Users should have the ability to add connections using someone's bank account
-  number.
-- User should be able to see the name, age and bank account number of all their
-  connections in a list.
+## How to use
 
-- Users can remove a connection from their account.
-- Users can send and receive money to accounts which are there connection. Each
-  transaction should be in the database.
-- Users should be able to see there past transactions.
-- Make sure you handle all the edge cases and error scenarios for example:
-  - What should happen when the user has zero balance and user tries to
-    send money.
-  - User tries to send money which is greater than their bank balance.
-  - User tries to send money to someone who is no longer has them as their
-    connection.
+First clone the project on your local machine
+
+```shell
+git clone https://github.com/CarlosPumar/Express_Mongo_Boilerplate
+```
+
+Then run the following command to remove the version tracking
+
+```shell
+rm -rf .git
+```
+
+And Voilà! Happy Hacking!
 
 ## How to run
+
+### Download Docker
+
+Download docker and docker-compose if you haven't already
 
 ### Development stage
 
@@ -35,7 +39,7 @@
 docker-compose -f docker-compose.dev.yml up -d --build
 ```
 
-localhost:3002
+localhost:3001
 
 ### Production stage
 
@@ -43,4 +47,4 @@ localhost:3002
 docker-compose -f docker-compose.prod.yml up -d --build
 ```
 
-localhost:3003
+localhost:3000
