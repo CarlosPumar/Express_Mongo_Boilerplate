@@ -6,12 +6,10 @@ services:
       - 'mongo:/data/db'
 
   back:
+    image: cpjim/express_mongo_boilerplate:latest
     depends_on:
       - mongo
     restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile.prod
     ports:
       - 3000:$PORT
     environment:
