@@ -25,4 +25,4 @@ jobs:
           context: .
           file: ./Dockerfile.prod
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.NAME }}:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.NAME }}:${{ steps.tag.outputs.tag }}
