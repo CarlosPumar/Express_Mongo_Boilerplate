@@ -21,7 +21,7 @@ beforeAll(async () => {
   await User.deleteMany();
 
   const user = await new User(initialUser);
-  const saltRounds = 10;
+  const saltRounds = 15;
   const password = await bcrypt.hash(user.password, saltRounds);
   user.password = password;
   await user.save();
