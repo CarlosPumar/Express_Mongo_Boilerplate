@@ -49,7 +49,7 @@ localhost:3001
 ### Production stage
 
 ```shell
-docker compose -f docker-compose.prod.yml up -d --build
+docker compose -f docker-compose.prod.yml up -d --build --force-recreate
 ```
 
 localhost:3000
