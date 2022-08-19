@@ -31,6 +31,20 @@ In your github repository set the following secret keys:
 - DOCKER_HUB_ACCESS_TOKEN
 - GIT_TOKEN
 
+### If husky doesn`t work
+
+Enable git hooks
+
+```shell
+npx husky install
+```
+
+Give permission
+
+```shell
+chmod ug+x .husky/pre-commit
+```
+
 And Voilà! Happy Hacking!
 
 ## How to run
