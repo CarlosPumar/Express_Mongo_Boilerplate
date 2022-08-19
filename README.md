@@ -1,6 +1,6 @@
 # EXPRESS MONGO BOILEPLATE
 
-This boilerplate provides a proficient node with express and mongo structure.
+This boilerplate provides a proficient node with express and mongo structure with a ci/cd workflow
 
 - Linter (airbnb rules) configured with prettier and husky
 - Dockerized with development and production stages
@@ -29,6 +29,7 @@ In your github repository set the following secret keys:
 
 - DOCKER_HUB_USERNAME
 - DOCKER_HUB_ACCESS_TOKEN
+- GIT_TOKEN
 
 And Voilà! Happy Hacking!
 
@@ -49,7 +50,7 @@ localhost:3001
 ### Production stage
 
 ```shell
-docker compose -f docker-compose.prod.yml up -d --build --force-recreate
+docker compose -f docker-compose.prod.yml up -d
 ```
 
 localhost:3000
