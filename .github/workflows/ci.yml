@@ -19,7 +19,7 @@ jobs:
           GITHUB_TOKEN: '${{ secrets.GIT_TOKEN }}'
 
       - name: run docker
-        run: docker-compose f docker-compose.dev.yml up -d --build
+        run: docker-compose -f docker-compose.dev.yml up -d --build
 
       - name: run tests
         run: docker exec -it express_mongo_boilerplate-back-1 npm run test
