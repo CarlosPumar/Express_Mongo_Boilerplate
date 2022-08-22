@@ -40,7 +40,7 @@ describe('post users', () => {
       .post('/api/users')
       .set('Authorization', `Bearer ${token}`)
       .send(user)
-      .expect(200);
+      .expect(201);
     expect(user.name).toBe(newUser.body.name);
     expect(user.username).toBe(newUser.body.username);
   });

@@ -8,7 +8,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: ['npm run test']
     ports:
       - 3001:$PORT_DEV
     environment:

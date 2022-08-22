@@ -1,16 +1,7 @@
 FROM node:15.13-alpine as base
-
 WORKDIR /app
-
 COPY package.json .
 COPY package-lock.json .
-
-FROM base as test
-RUN npm install
-COPY . .
-RUN npm run test
-
-FROM base as prod
 RUN npm install
 COPY . .
 CMD ["npm", "run", "start"]
