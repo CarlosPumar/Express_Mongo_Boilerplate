@@ -21,7 +21,7 @@ const swaggerSpec = {
     },
     servers: [
       {
-        url: 'http://localhost:3001',
+        url: `http://localhost:${process.env.PORT_DEV}`,
         description: 'Development enviroment',
       },
     ],
