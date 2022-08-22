@@ -18,8 +18,6 @@ jobs:
         with:
           GITHUB_TOKEN: '${{ secrets.GIT_TOKEN }}'
 
-      - run: sudo apt-get update
-      - run: sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
       - name: run docker
         run: docker-compose f docker-compose.dev.yml up -d --build
 
