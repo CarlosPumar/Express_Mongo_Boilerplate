@@ -21,6 +21,8 @@ jobs:
       - name: run docker
         run: docker-compose -f docker-compose.dev.yml up -d --build
 
+      - run: docker ps
+
       - name: run tests
         run: docker exec -it express_mongo_boilerplate-back-1 npm run test
 
