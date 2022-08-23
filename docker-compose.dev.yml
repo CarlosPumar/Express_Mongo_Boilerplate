@@ -14,5 +14,3 @@ services:
       - PORT=$PORT_DEV
       - MONGODB_URI=$MONGODB_URI_DEV
       - SECRET=$SECRET_DEV
-    volumes:
-      - ./:/app
